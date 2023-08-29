@@ -28,11 +28,13 @@ public class Funciones {
     }
 
     public static void medidoresAnuales(int tiempo, Globales globales, Estado estado) {
-        globales.aniosTranscurridos = tiempo/365;
-        if(globales.aniosTranscurridos > 0) {
-            globales.indiceSuscriptores = (double) estado.suscriptores / globales.aniosTranscurridos;
-            globales.indiceBeneficio = estado.beneficio / globales.aniosTranscurridos;
-            globales.indiceStrike = (double) globales.cantidadDeStrikes / globales.aniosTranscurridos;
+        if(tiempo % 365 == 0) {
+            globales.aniosTranscurridos = tiempo/365;
+            if(globales.aniosTranscurridos > 0) {
+                globales.indiceSuscriptores = (double) estado.suscriptores / globales.aniosTranscurridos;
+                globales.indiceBeneficio = estado.beneficio / globales.aniosTranscurridos;
+                globales.indiceStrike = (double) globales.cantidadDeStrikes / globales.aniosTranscurridos;
+            }
         }
     }
 
