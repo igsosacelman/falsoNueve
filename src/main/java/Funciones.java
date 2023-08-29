@@ -46,4 +46,26 @@ public class Funciones {
         globales.partidosImportantes = (int) (globales.partidosACubrir * 0.4);
         globales.partidosNormales = globales.partidosACubrir - globales.partidosImportantes;
     }
+
+    public static void acumularPeriodistasDisponibles(Globales globales) {
+        globales.sumatoriaPeriodistasDisponibles += globales.periodistasDisponibles;
+    }
+
+    public static void acumularPartidosImportantesACubrir(Globales globales) {
+        globales.sumatoriaPartidosImportantesACubrir += globales.partidosImportantes;
+    }
+
+    public static void acumularPartidosNormalesACubrir(Globales globales) {
+        globales.sumatoriaPartidosNormalesACubrir += globales.partidosNormales;
+    }
+
+    public static void resetearAcumuladoresDiarios(Globales globales) {
+        globales.gananciaDiaria = 0;
+        globales.costoDiarioOperadores = 0;
+        globales.costoDiarioPeriodistas = 0;
+        globales.vistasDiarias = 0;
+        globales.partidosNoTransmitidosDiarios = 0;
+        globales.contadorPartidosImportantes = 0;
+        globales.contadorPartidosNormales = 0;
+    }
 }

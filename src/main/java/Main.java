@@ -21,6 +21,15 @@ public class Main {
                 Funciones.setUpFinDeSemana(globales, control);
             }
 
+            Funciones.acumularPeriodistasDisponibles(globales);
+            Funciones.acumularPartidosImportantesACubrir(globales);
+            Funciones.acumularPartidosNormalesACubrir(globales);
+
+            Funciones.resetearAcumuladoresDiarios(globales);
+            //Funciones.cubrirPartidosImportantes(globales, control);
+            //Funciones.cubrirPartidosNormales(globales, control);
+
+
             t++;
 
 
