@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         int tf = 50000;
         int t = 0;
@@ -39,5 +39,6 @@ public class Main {
         Resultado.ppnc(globales);
         Resultado.ppic(globales);
         Resultado.ppo(globales);
+        Resultado.indicesUtiles(globales);
     }
 }

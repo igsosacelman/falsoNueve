@@ -47,5 +47,16 @@ public class Resultado {
         System.out.println( "sumatoriaPeriodistasOciosos: " + globales.sumatoriaPeriodistasOciosos);
         System.out.println( "sumatoriaPeriodistasDisponibles: " + globales.sumatoriaPeriodistasDisponibles);
         System.out.println( "Porcentaje de periodistas ociosos: " + (df.format(ppo*100))+"%");
+        System.out.println("");
+    }
+
+    /**
+     * Indices utiles
+     */
+    public static void indicesUtiles(Globales globales) {
+        DecimalFormat df = new DecimalFormat("0.00");
+        System.out.println( "Promedio de strikes por anio: " + (df.format(globales.indiceStrike)));
+        System.out.println( "Promedio de beneficio por anio: " + (df.format(globales.indiceBeneficio)));
+        System.out.println( "Promedio de suscriptores por anio: " + (df.format(globales.indiceSuscriptores)));
     }
 }
