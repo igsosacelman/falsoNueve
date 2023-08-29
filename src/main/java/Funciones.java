@@ -36,7 +36,7 @@ public class Funciones {
     }
 
     public static void setUpDiaDeSemana(Globales globales, Control control) {
-        int pdds = Datos.pdds();
+        double pdds = Datos.pdds();
         globales.periodistasDisponibles = (int) Math.floor(control.cantidadPeriodistas * pdds * globales.modificadorVerano);
         globales.partidosACubrir = (int) (control.pcfs * globales.modificadorStrike);
         globales.partidosImportantes = (int) (globales.partidosACubrir * 0.2);
@@ -44,7 +44,7 @@ public class Funciones {
     }
 
     public static void setUpFinDeSemana(Globales globales, Control control) {
-        int pdfs = Datos.pdfs();
+        double pdfs = Datos.pdfs();
         globales.periodistasDisponibles = (int) Math.floor(control.cantidadPeriodistas * pdfs * globales.modificadorVerano);
         globales.partidosACubrir = (int) (control.pcfs * globales.modificadorStrike);
         globales.partidosImportantes = (int) (globales.partidosACubrir * 0.4);
