@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Funciones {
 
     public static void actualizarModificadorVerano(int tiempo, Globales globales) {
@@ -26,9 +28,11 @@ public class Funciones {
 
     public static void medidoresAnuales(int tiempo, Globales globales, Estado estado) {
         globales.aniosTranscurridos = Math.floorDiv(tiempo, 365);
-        globales.indiceSuscriptores = estado.suscriptores / globales.aniosTranscurridos;
-        globales.indiceBeneficio = estado.beneficio / globales.aniosTranscurridos;
-        globales.indiceStrike = globales.cantidadDeStrikes / globales.aniosTranscurridos;
+        if(globales.aniosTranscurridos > 0) {
+            globales.indiceSuscriptores = estado.suscriptores / globales.aniosTranscurridos;
+            globales.indiceBeneficio = estado.beneficio / globales.aniosTranscurridos;
+            globales.indiceStrike = globales.cantidadDeStrikes / globales.aniosTranscurridos;
+        }
     }
 
     public static void setUpDiaDeSemana(Globales globales, Control control) {
@@ -68,15 +72,23 @@ public class Funciones {
     }
 
     public static double probabilidadDeFallas() {
-        return 1;
+        return new Random().nextDouble();
     }
 
     public static double partidoImportanteAburrido() {
-        return 1;
+        if((new Random().nextDouble()) <= 0.1) {
+            return 0.5;
+        } else {
+            return 1;
+        }
     }
 
     public static double partidoNormalAburrido() {
-        return 1;
+        if((new Random().nextDouble()) <= 0.4) {
+            return 0.5;
+        } else {
+            return 1;
+        }
     }
 
     public static void cubrirPartidosImportantes(Globales globales, Estado estado) {
@@ -133,7 +145,7 @@ public class Funciones {
     }
 
     public static double probabilidadDeStrike() {
-        return 1;
+        return new Random().nextDouble();
     }
 
     public static void verificarStrike(int tiempoActual, Globales globales) {
