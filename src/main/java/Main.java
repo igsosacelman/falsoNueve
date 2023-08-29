@@ -26,8 +26,8 @@ public class Main {
             Funciones.acumularPartidosNormalesACubrir(globales);
 
             Funciones.resetearAcumuladoresDiarios(globales);
-            //Funciones.cubrirPartidosImportantes(globales, control);
-            //Funciones.cubrirPartidosNormales(globales, control);
+            Funciones.cubrirPartidosImportantes(globales, estado);
+            Funciones.cubrirPartidosNormales(globales, estado);
 
 
             t++;

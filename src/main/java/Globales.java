@@ -33,6 +33,9 @@ public class Globales {
     public int sumatoriaPartidosImportantesACubrir = 0;
     public int sumatoriaPartidosNormalesACubrir = 0;
 
+    public int sumatoriaPartidosImportantesTransmitidos = 0;
+    public int sumatoriaPartidosNormalesTransmitidos = 0;
+
     /**
      * Para cubrir los partidos
      */
@@ -41,6 +44,5 @@ public class Globales {
     public double costoDiarioPeriodistas = 0;
     public int vistasDiarias = 0;
     public int partidosNoTransmitidosDiarios = 0;
-    public int contadorPartidosImportantes = 0;
-    public int contadorPartidosNormales = 0;
+    public int gananciasPorVista = 10;
 }

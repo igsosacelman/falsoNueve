@@ -65,7 +65,59 @@ public class Funciones {
         globales.costoDiarioPeriodistas = 0;
         globales.vistasDiarias = 0;
         globales.partidosNoTransmitidosDiarios = 0;
-        globales.contadorPartidosImportantes = 0;
-        globales.contadorPartidosNormales = 0;
+    }
+
+    public static double probabilidadDeFallas() {
+        return 1;
+    }
+
+    public static double partidoImportanteAburrido() {
+        return 1;
+    }
+
+    public static double partidoNormalAburrido() {
+        return 1;
+    }
+
+    public static void cubrirPartidosImportantes(Globales globales, Estado estado) {
+        for (int i = 0; i < globales.partidosImportantes; i++) {
+            if(probabilidadDeFallas() < 0.01) {
+                globales.partidosNoTransmitidosDiarios++;
+            } else {
+                if(globales.periodistasDisponibles <= 4) {
+                    globales.partidosNoTransmitidosDiarios++;
+                } else {
+                    globales.periodistasDisponibles -= 4;
+                    int vistasPartido = (int) ((estado.suscriptores * (0.002) + Datos.vpi()) * globales.modificadorMundial * partidoImportanteAburrido());
+                    int gananciasPartido = (int) (vistasPartido * 0.02) * 500 + vistasPartido * globales.gananciasPorVista;
+                    globales.costoDiarioOperadores += 2000 + estado.suscriptores * 0.05;
+                    globales.costoDiarioPeriodistas += Math.min(gananciasPartido * 0.4, 4000);
+                    globales.vistasDiarias += vistasPartido;
+                    globales.sumatoriaPartidosImportantesTransmitidos++;
+                    globales.gananciaDiaria += gananciasPartido;
+                }
+            }
+        }
+    }
+
+    public static void cubrirPartidosNormales(Globales globales, Estado estado) {
+        for (int i = 0; i < globales.partidosNormales; i++) {
+            if(probabilidadDeFallas() < 0.01) {
+                globales.partidosNoTransmitidosDiarios++;
+            } else {
+                if(globales.periodistasDisponibles <= 2) {
+                    globales.partidosNoTransmitidosDiarios++;
+                } else {
+                    globales.periodistasDisponibles -= 2;
+                    int vistasPartido = (int) ((estado.suscriptores * (0.002) + Datos.vpn()) * globales.modificadorMundial * partidoNormalAburrido());
+                    int gananciasPartido = (int) (vistasPartido * 0.02) * 500 + vistasPartido * globales.gananciasPorVista;
+                    globales.costoDiarioOperadores += 2000 + estado.suscriptores * 0.05;
+                    globales.costoDiarioPeriodistas += Math.min(gananciasPartido * 0.4, 2000);
+                    globales.vistasDiarias += vistasPartido;
+                    globales.sumatoriaPartidosNormalesTransmitidos++;
+                    globales.gananciaDiaria += gananciasPartido;
+                }
+            }
+        }
     }
 }
