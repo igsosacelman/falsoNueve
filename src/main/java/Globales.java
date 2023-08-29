@@ -36,6 +36,10 @@ public class Globales {
     public int sumatoriaPartidosImportantesTransmitidos = 0;
     public int sumatoriaPartidosNormalesTransmitidos = 0;
 
+    public int sumatoriaVistasDiarias = 0;
+    public int sumatoriaPartidosACubrir = 0;
+    public int sumatoriaPeriodistasOciosos = 0;
+
     /**
      * Para cubrir los partidos
      */

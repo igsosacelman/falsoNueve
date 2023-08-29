@@ -29,10 +29,11 @@ public class Main {
             Funciones.cubrirPartidosImportantes(globales, estado);
             Funciones.cubrirPartidosNormales(globales, estado);
 
+            Funciones.actualizarEstado(estado, globales);
+            Funciones.actualizarAcumuladoresDiarios(globales);
+            Funciones.verificarStrike(t, globales);
 
             t++;
-
-
         }
     }
 

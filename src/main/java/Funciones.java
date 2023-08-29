@@ -120,4 +120,26 @@ public class Funciones {
             }
         }
     }
+
+    public static void actualizarEstado(Estado estado, Globales globales) {
+        estado.suscriptores = estado.suscriptores + (int) (globales.vistasDiarias * 0.01) - (int) (estado.suscriptores * 0.001 * globales.partidosNoTransmitidosDiarios);
+        estado.beneficio = estado.beneficio + globales.gananciaDiaria - globales.costoDiarioOperadores - globales.costoDiarioPeriodistas;
+    }
+
+    public static void actualizarAcumuladoresDiarios(Globales globales) {
+        globales.sumatoriaVistasDiarias += globales.vistasDiarias;
+        globales.sumatoriaPartidosACubrir += globales.partidosACubrir;
+        globales.sumatoriaPeriodistasOciosos += globales.periodistasDisponibles;
+    }
+
+    public static double probabilidadDeStrike() {
+        return 1;
+    }
+
+    public static void verificarStrike(int tiempoActual, Globales globales) {
+        if(probabilidadDeStrike() <= 0.0002) {
+            globales.finDeStrike = tiempoActual + 365;
+            globales.cantidadDeStrikes++;
+        }
+    }
 }
