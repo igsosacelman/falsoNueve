@@ -4,11 +4,13 @@ public class Main {
         int tf = 50000;
         int t = 0;
 
+        Estado estado = new Estado();
+        Control control = new Control();
         Globales globales = new Globales();
 
         while(t < tf){
             // System.out.println( "Hello World! " + t);
-            Funciones.medidoresAnuales(t, globales);
+            Funciones.medidoresAnuales(t, globales, estado);
             Funciones.actualizarModificadorVerano(t, globales);
             Funciones.actualizarModificadorMundial(t, globales);
             Funciones.actualizarModificadorStrike(t, globales);

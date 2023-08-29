@@ -24,10 +24,11 @@ public class Funciones {
         }
     }
 
-    public static void medidoresAnuales(int tiempo, Globales globales) {
-        if((tiempo % 365 ) == 0) {
-
-        }
+    public static void medidoresAnuales(int tiempo, Globales globales, Estado estado) {
+        globales.aniosTranscurridos = Math.floorDiv(tiempo, 365);
+        globales.indiceSuscriptores = estado.suscriptores / globales.aniosTranscurridos;
+        globales.indiceBeneficio = estado.beneficio / globales.aniosTranscurridos;
+        globales.indiceStrike = globales.cantidadDeStrikes / globales.aniosTranscurridos;
     }
 
 }
