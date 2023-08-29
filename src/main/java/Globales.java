@@ -1,21 +1,29 @@
 public class Globales {
 
-    double modificadorVerano = 0;
-    int modificadorMundial = 0;
-    double modificadorStrike = 0;
+    public double modificadorVerano = 0;
+    public int modificadorMundial = 0;
+    public double modificadorStrike = 0;
 
     /**
      * Para la funcion Funciones.medidoresAnuales
      */
-    int aniosTranscurridos = 0;
-    double indiceSuscriptores = 0;
-    double indiceBeneficio = 0;
-    double indiceStrike = 0;
+    public int aniosTranscurridos = 0;
+    public double indiceSuscriptores = 0;
+    public double indiceBeneficio = 0;
+    public double indiceStrike = 0;
 
     /**
      * Para los strikes
      */
-    int finDeStrike = 0;
-    int cantidadDeStrikes = 0;
+    public int finDeStrike = 0;
+    public int cantidadDeStrikes = 0;
+
+    /**
+     * Para los setUp de dias de semana y fin de semana
+     */
+    public int periodistasDisponibles = 0;
+    public int partidosACubrir = 0;
+    public int partidosImportantes = 0;
+    public int partidosNormales = 0;
 
 }

@@ -1,5 +1,5 @@
 public class Estado {
 
-    int beneficio = 0;
-    int suscriptores = 70000;
+    public int beneficio = 0;
+    public int suscriptores = 70000;
 }

@@ -14,6 +14,13 @@ public class Main {
             Funciones.actualizarModificadorVerano(t, globales);
             Funciones.actualizarModificadorMundial(t, globales);
             Funciones.actualizarModificadorStrike(t, globales);
+
+            if((t % 7) < 5) {
+                Funciones.setUpDiaDeSemana(globales, control);
+            } else {
+                Funciones.setUpFinDeSemana(globales, control);
+            }
+
             t++;
 
 

@@ -31,4 +31,19 @@ public class Funciones {
         globales.indiceStrike = globales.cantidadDeStrikes / globales.aniosTranscurridos;
     }
 
+    public static void setUpDiaDeSemana(Globales globales, Control control) {
+        int pdds = Datos.pdds();
+        globales.periodistasDisponibles = (int) Math.floor(control.cantidadPeriodistas * pdds * globales.modificadorVerano);
+        globales.partidosACubrir = (int) (control.pcfs * globales.modificadorStrike);
+        globales.partidosImportantes = (int) (globales.partidosACubrir * 0.2);
+        globales.partidosNormales = globales.partidosACubrir - globales.partidosImportantes;
+    }
+
+    public static void setUpFinDeSemana(Globales globales, Control control) {
+        int pdfs = Datos.pdfs();
+        globales.periodistasDisponibles = (int) Math.floor(control.cantidadPeriodistas * pdfs * globales.modificadorVerano);
+        globales.partidosACubrir = (int) (control.pcfs * globales.modificadorStrike);
+        globales.partidosImportantes = (int) (globales.partidosACubrir * 0.4);
+        globales.partidosNormales = globales.partidosACubrir - globales.partidosImportantes;
+    }
 }
