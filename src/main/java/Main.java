@@ -9,7 +9,6 @@ public class Main {
         Globales globales = new Globales();
 
         while(t < tf){
-            // System.out.println( "Hello World! " + t);
             Funciones.medidoresAnuales(t, globales, estado);
             Funciones.actualizarModificadorVerano(t, globales);
             Funciones.actualizarModificadorMundial(t, globales);
@@ -35,8 +34,10 @@ public class Main {
 
             t++;
         }
+
+        Resultado.pvt(globales);
+        Resultado.ppnc(globales);
+        Resultado.ppic(globales);
+        Resultado.ppo(globales);
     }
-
-
-
 }
